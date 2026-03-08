@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JN-RAM Construção - Portal</title>
+
+<style>
+
+body{
+    background-color:darkblue;
+    text-align:center;
+    margin:0;
+    padding:0;
+    color:white;
+    font-family:Arial;
+    text-shadow:1px 1px 2px black;
+}
+
+img{
+    border:5px solid #933;
+    margin-top:20px;
+}
+
+/* Área da simulação */
+
+#simulacao{
+    margin-top:40px;
+    height:420px;
+    position:relative;
+    background:linear-gradient(skyblue 70%, green 30%);
+    overflow:hidden;
+    border:4px solid white;
+}
+
+/* Informações */
+
+#info{
+    background:white;
+    color:black;
+    padding:10px;
+    border-radius:8px;
+    display:inline-block;
+    margin-top:15px;
+}
+
+/* Avião */
+
+.plane{
+    position:absolute;
+    width:40px;
+    height:40px;
+    background:white;
+    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin:center;
+}
+
+/* régua 2m */
+
+.regua{
+position:absolute;
+bottom:0;
+left:50px;
+width:200px;
+height:4px;
+background:black;
+}
+
+/* altura 1.80m */
+
+.altura{
+position:absolute;
+left:50px;
+bottom:0;
+height:180px;
+width:3px;
+background:red;
+}
+
+/* botões */
+
+button{
+margin:10px;
+padding:10px 20px;
+font-size:16px;
+border:none;
+border-radius:6px;
+cursor: pointer;
+}
+
+/* Passo a passo */
+
+#passos{
+    margin:40px auto;
+    width:80%;
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+}
+
+/* Algoritmo equipe */
+
+#equipe{
+    margin:40px auto;
+    width:80%;
+    background:rgba(0,0,0,0.8);
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+}
+
+pre{
+    color:#00ffcc;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<img src="https://uploads.onecompiler.io/43yq7zkny/44fdkeetq/1000353322.jpg" width="480">
+
+<h2>
+Jornada na Revolução da Automação<br>
+na Construção Moderna
+</h2>
+
+<div id="info">
+
+<strong style="font-family: Arial, Helvetica; text-shadow: 1px 1px 1px black;">Simulação do voo</strong><br>
+
+Distância: 2 m<br>
+Altura: 1,80 m<br>
+Curva: 90° à direita
+
+</div>
+
+
+<!-- SIMULADOR -->
+
+<div id="simulacao">
+
+<div class="regua"></div>
+<div class="altura"></div>
+
+<div class="plane" id="plane"></div>
+
+</div>
+
+<div>
+
+<button onclick="iniciar()">Iniciar</button>
+<button onclick="pausar()">Pausar</button>
+<button onclick="resetar()">Reiniciar</button>
+
+</div>
+
+
+
+<!-- PASSO A PASSO -->
+
+<div id="passos">
+
+<h3>Passo a passo – Avião de papel com 16 asas</h3>
+
+<img src="https://uploads.onecompiler.io/43yq7zkny/44fdkeetq/1000353325.jpg" 
+width="400" height="600">
+
+</div>
+
+
+
+<!-- ALGORITMO DA EQUIPE -->
+
+<div id="equipe">
+
+<h3>Algoritmo da equipe de engenharia</h3>
+
+<pre>
+
+INÍCIO_PROJETO
+
+Gerente_de_Projeto
+
+  Eng. Rebeca
+  Planejar cronograma
+  Coordenar equipe
+
+Gerente_de_Requisitos
+  
+  Eng. Bruna
+  Definir escopo
+  Documentar requisitos
+
+Projetista
+  
+  Eng. Manoela
+  Criar modelagem técnica
+
+Desenvolvedor_1
+
+  Eng. Jauahallau-nehu
+  Construir estrutura HTML + CSS + Javascript
+
+Desenvolvedor_2
+  
+  Eng. Nicolas
+  Construir passo a passo do protótipo
+  Construir Slogan da Construtora
+
+Teste QA_1
+  
+  Eng. Ana Cecilia
+  Testar distância 2 m
+  Testar altura 1.80 m
+
+Teste QA_2
+
+  Eng. Nanda
+  Validar interface
+  Aprovar sistema
+
+FIM_PROJETO
+
+</pre>
+
+</div>
+
+
+
+<script>
+
+const plane=document.getElementById("plane")
+
+let t=0
+let animando=false
+
+function curva(){
+
+if(!animando) return
+
+t+=0.02
+
+let raio=200
+
+let x=50+raio*Math.sin(t)
+let y=300-raio*(1-Math.cos(t))
+
+plane.style.left=x+"px"
+plane.style.top=y+"px"
+
+plane.style.transform="rotate("+(t*90)+"deg)"
+
+if(t<Math.PI/2){
+
+requestAnimationFrame(curva)
+
+}else{
+
+resetar()
+iniciar()
+
+}
+
+}
+
+function iniciar(){
+
+if(!animando){
+
+animando=true
+curva()
+
+}
+
+}
+
+function pausar(){
+
+animando=false
+
+}
+
+function resetar(){
+
+animando=false
+t=0
+
+plane.style.left="50px"
+plane.style.top="300px"
+plane.style.transform="rotate(0deg)"
+
+}
+
+resetar()
+
+</script>
+
+</body>
+</html>
