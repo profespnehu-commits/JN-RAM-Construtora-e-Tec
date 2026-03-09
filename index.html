@@ -9,61 +9,81 @@
 
 <style>
 
-.container{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+body{
+background-color:darkblue;
+text-align:center;
+margin:0;
+padding:0;
+color:white;
+font-family:Arial;
+text-shadow:1px 1px 2px black;
 }
 
-body{
-    background-color:darkblue;
-    text-align:center;
-    margin:0;
-    padding:0;
-    color:white;
-    font-family:Arial;
-    text-shadow:1px 1px 2px black;
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 img{
-    border:5px solid #933;
-    margin-top:20px;
+border:5px solid #933;
+margin-top:20px;
 }
 
-/* Área da simulação */
+/* GALERIA */
+
+.galeria{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.galeria img{
+width:30%;
+border-radius:8px;
+}
+
+.galeria video{
+width:30%;
+border-radius:8px;
+}
+
+/* SIMULAÇÃO */
 
 #simulacao{
-    margin-top:40px;
-    height:420px;
-    position:relative;
-    background:linear-gradient(skyblue 70%, green 30%);
-    overflow:hidden;
-    border:4px solid white;
+margin-top:40px;
+height:420px;
+position:relative;
+background:linear-gradient(skyblue 70%, green 30%);
+overflow:hidden;
+border:4px solid white;
 }
 
-/* Informações */
+/* INFORMAÇÕES */
 
 #info{
-    background:white;
-    color:black;
-    padding:10px;
-    border-radius:8px;
-    display:inline-block;
-    margin-top:15px;
+background:white;
+color:black;
+padding:10px;
+border-radius:8px;
+display:inline-block;
+margin-top:15px;
 }
 
-/* Avião */
+/* AVIÃO */
 
 .plane{
-    position:absolute;
-    width:40px;
-    height:40px;
-    background:white;
-    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
-    transform-origin:center;
+position:absolute;
+width:40px;
+height:40px;
+background:white;
+clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+transform-origin:center;
 }
 
 /* régua */
@@ -99,7 +119,7 @@ border-radius:6px;
 cursor:pointer;
 }
 
-/* orçamento */
+/* ORÇAMENTO */
 
 #orcamento{
 margin:40px auto;
@@ -129,7 +149,7 @@ font-weight:bold;
 color:#00ffcc;
 }
 
-/* Passo a passo */
+/* PASSO A PASSO */
 
 #passos{
 margin:40px auto;
@@ -137,10 +157,10 @@ width:80%;
 background:rgba(0,0,0,0.6);
 padding:20px;
 border-radius:10px;
-text-align:left;
+text-align:center;
 }
 
-/* equipe */
+/* EQUIPE */
 
 #equipe{
 margin:40px auto;
@@ -159,7 +179,6 @@ font-weight:bold;
 </style>
 </head>
 
-
 <body>
 
 <img src="https://uploads.onecompiler.io/43yq7zkny/44fdkeetq/1000353322.jpg" width="480">
@@ -167,7 +186,7 @@ font-weight:bold;
 <h2>
 Bem-vindo à <b>jornada da revolução da automação na construção moderna.</b><br>
 Aqui, inovação, tecnologia e eficiência se unem para transformar a forma de construir,<br>
-    trazendo soluções inteligentes para projetos cada vez mais modernos e sustentáveis.
+trazendo soluções inteligentes para projetos cada vez mais modernos e sustentáveis.
 </h2>
 
 <div id="info">
@@ -208,9 +227,7 @@ Curva: 90° à direita
 <p>Informe os dados do projeto</p>
 
 <input type="number" id="pecas" placeholder="Quantidade de peças">
-
 <input type="number" id="horas" placeholder="Horas de engenharia">
-
 <input type="number" id="complexidade" placeholder="Complexidade (1-5)">
 
 <br>
@@ -221,11 +238,9 @@ Curva: 90° à direita
 
 </div>
 
-
-
 <!-- PASSO A PASSO -->
 
-<div id="passos" style="text-align:center;">
+<div id="passos">
 
 <h3>Passo a passo – Avião de papel com 16 asas</h3>
 
@@ -240,12 +255,11 @@ width="400" height="600">
 
 <div class="galeria">
 
-<img src="ProtótipoTest1.jpg" width="30%" height="30%">
-<img src="ProtótipoTest2.jpg" width="30%" height="30%">
-<img src="ProtótipoTest3.jpg" width="30%" height="30%">
+<img src="ProtótipoTest1.jpg">
+<img src="ProtótipoTest2.jpg">
+<img src="ProtótipoTest3.jpg">
 
 </div>
-
 
 <!-- GALERIA DE VÍDEOS -->
 
@@ -254,22 +268,22 @@ width="400" height="600">
 <div class="galeria">
 
 <video controls>
-<source src="Protótipo 1.mp4" type="video/mp4" style="width:10%; height: 10%;>
+<source src="Protótipo 1.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="Protótipo2.mp4" type="video/mp4" style="width:10%; height: 10%;>
+<source src="Protótipo2.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="Protótipo3.mp4" type="video/mp4" style="width:10%; height: 10%;">
+<source src="Protótipo3.mp4" type="video/mp4">
 </video>
 
-</div><br>
+</div>
 
 <!-- RELATÓRIO -->
 
-<div class="container" style="color: #000; text-shadow: 1px 1px 1px darkblue;">
+<div class="container" style="color:#000;text-shadow:1px 1px 1px darkblue;">
 
 <h1>RELATÓRIO DO PROJETO – AVIÃO DE PAPEL</h1>
 
@@ -284,47 +298,15 @@ percorrer pelo menos 2 metros de distância, alcançar altura mínima de 1,80 me
 16 asas ou dobras e realizar uma curva aproximada de 90 graus durante o voo.
 </p>
 
-<p>
-A partir desses critérios, foram realizados testes e ajustes no modelo do avião até que fosse possível
-atingir os resultados esperados.
-</p>
-
-
 <h2>2. Metodologia</h2>
 
 <p>
 Para a realização do projeto foram utilizados materiais simples, principalmente uma folha de papel A4.
-O processo começou com a escolha de um modelo inicial de avião que permitisse realizar várias dobras
-nas asas.
-</p>
-
-<p>
-Após a construção do primeiro modelo, foram realizados testes de lançamento para observar o
+Após a construção do primeiro modelo foram realizados testes de lançamento para observar o
 comportamento do avião durante o voo.
 </p>
 
-<p>
-Durante esses testes foram avaliados fatores como altura atingida, distância percorrida e estabilidade
-da trajetória. Sempre que o avião não atendia aos requisitos propostos, eram feitos pequenos ajustes
-nas asas e na estrutura do modelo.
-</p>
-
-
-<h2>3. Desafios Encontrados</h2>
-
-<p>
-Uma das maiores dificuldades encontradas durante o projeto foi fazer com que o avião realizasse uma
-curva de aproximadamente 90 graus. Nos primeiros testes, o avião seguia apenas em linha reta.
-</p>
-
-<p>
-Para resolver esse problema, foram feitos pequenos ajustes na inclinação de uma das asas laterais.
-Essa diferença de inclinação ajudou a criar uma alteração na sustentação entre os lados do avião,
-permitindo a mudança de trajetória.
-</p>
-
-
-<h2>4. Resultados</h2>
+<h2>3. Resultados</h2>
 
 <ul>
 <li><strong>Distância:</strong> entre 2,3 e 2,5 metros</li>
@@ -332,14 +314,9 @@ permitindo a mudança de trajetória.
 <li><strong>Estrutura:</strong> composta por 16 asas ou superfícies dobradas</li>
 </ul>
 
-<p>
-Os resultados demonstraram que o modelo desenvolvido apresentou boa estabilidade no ar e conseguiu
-cumprir os critérios estabelecidos para o projeto.
-</p>
-
 </div>
 
-<!--- Equipe --->
+<!-- EQUIPE -->
 
 <div id="equipe">
 
@@ -442,10 +419,6 @@ plane.style.transform="rotate(0deg)"
 
 resetar()
 
-
-
-/* CALCULADORA DE ORÇAMENTO */
-
 function calcularOrcamento(){
 
 let pecas=document.getElementById("pecas").value
@@ -464,12 +437,11 @@ document.getElementById("resultadoOrcamento").innerHTML=
 
 </script>
 
-
 <footer style="margin-top:50px">
 
 <i>Front-end developer:</i><br>
 
-<img src="autor.jpeg" style="width: 50px; height: 70px;">
+<img src="autor.jpeg" style="width:50px;height:70px;">
     
 <p><b>Prof. Jauahallau-nehu E. C. da Silva</b></p>
 
@@ -486,4 +458,4 @@ Mestrando em Ensino – PPGENS / UNIVASF
 </footer>
 
 </body>
-</html>
+    </html>
